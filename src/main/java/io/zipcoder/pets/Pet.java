@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by nathanielholloway on 9/26/16.
+ * This class contains the Pet object model.
  */
 public class Pet {
     ArrayList<Pet> kennel;
