@@ -5,4 +5,9 @@ package io.zipcoder.pets;
  * This contains the Monkey object model.
  */
 public class Monkey extends Pet {
+
+    @Override
+    public String speak() {
+        return "Ooo Ooo ah ahh ahhh ahhh!";
+    }
 }

@@ -5,4 +5,9 @@ package io.zipcoder.pets;
  * This class contains the Dog object model.
  */
 public class Dog extends Pet {
+
+    @Override
+    public String speak() {
+        return "Woof, Woof!";
+    }
 }
