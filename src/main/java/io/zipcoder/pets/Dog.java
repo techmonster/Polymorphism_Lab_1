@@ -6,6 +6,11 @@ package io.zipcoder.pets;
  */
 public class Dog extends Pet {
 
+
+    public Dog(String name){
+        this.name = name;
+    }
+
     @Override
     public String speak() {
         return "Woof, Woof!";

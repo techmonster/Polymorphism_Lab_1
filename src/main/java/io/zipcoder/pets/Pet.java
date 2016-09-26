@@ -1,19 +1,32 @@
 package io.zipcoder.pets;
 
-import java.util.ArrayList;
-
 /**
  * Created by nathanielholloway on 9/26/16.
  * This class contains the Pet object model.
  */
 public class Pet {
-    ArrayList<Pet> kennel;
 
+     String name;
     public Pet(){
-        kennel = new ArrayList<Pet>();
-    }
-    private String name;
 
+    }
+    public Pet(String name){
+        this.name = name;
+    }
+
+
+    public static Pet createPet(String type, String name){
+        if (type.equalsIgnoreCase("Dog")) {
+            return new Dog(name);
+        }
+        if(type.equalsIgnoreCase("Cat")){
+            return new Cat(name);
+        }
+        if(type.equalsIgnoreCase("Monkey")){
+            return new Monkey(name);
+        }
+        return null;
+    }
     public String getName() {
         return name;
     }
@@ -26,10 +39,6 @@ public class Pet {
         return "Grrrrr.";
     }
 
-    public void printPets(){
-        for (Pet p:kennel) {
-            System.out.println("My name is "+p.getName() + " and I say "+ p.speak());
 
-        }
-    }
+
 }

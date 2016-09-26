@@ -1,5 +1,5 @@
 package io.zipcoder.pets;
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
@@ -8,30 +8,51 @@ import org.junit.Test;
  */
 public class PetTest {
 
-    @Test
-    public void speak(){
-        Pet thisPet = new Pet();
-        String words = thisPet.speak();
-        Assert.assertNotNull("This should return the String spoken",words);
-    }
 
-    @Test
-    public void getName(){
-        Pet thisPet = new Pet();
-        thisPet.setName("This pet's name");
-        String expected = "This pet's name";
-        String actual = thisPet.getName();
-        Assert.assertSame(expected,actual);
-    }
+        @Test
+        public void speakDogTest() {
+            Pet thisPet = new Dog("Frank");
+            String expected = "Woof, Woof!";
+            String actual = thisPet.speak();
+            assertEquals(expected, actual);
+        }
 
-    @Test
-    public void setName(){
-        Pet thisPet = new Pet();
-        thisPet.setName("This pet");
-        String expected = "This pet";
-        String actual = thisPet.getName();
-        Assert.assertSame(expected,actual);
-    }
+        @Test
+        public void speakCatTest() {
+            Pet thisPet = new Cat("BOB");
+            String expected = "Skssss!";
+            String actual = thisPet.speak();
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        public void setPetName() {
+            Pet thisPet = new Cat("Fred");
+            thisPet.setName("Fred");
+            String expected = "Fred";
+            String actual = thisPet.getName();
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        public void getPetName() {
+            Pet thisPet = new Dog("Dan");
+            thisPet.setName("Dan");
+            String expected = "Dan";
+            String actual = thisPet.getName();
+            assertEquals(expected, actual);
+        }
+
+        @Test
+        public void addPetTest(){
+            PetOwner thisOwner = new PetOwner();
+            Pet dog = new Dog("Frank");
+            Pet cat = new Cat("Bob");
+            Pet monkey = new Monkey("Dan");
+            boolean petAdded = thisOwner.add(dog);
+            assertTrue(petAdded);
+        }
+
 
 
 }
