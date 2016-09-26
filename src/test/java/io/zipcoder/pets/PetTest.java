@@ -11,7 +11,8 @@ public class PetTest {
     @Test
     public void speak(){
         Pet thisPet = new Pet();
-        Assert.assertNotNull("This should return the String spoken",thisPet);
+        String words = thisPet.speak();
+        Assert.assertNotNull("This should return the String spoken",words);
     }
 
     @Test
@@ -31,4 +32,5 @@ public class PetTest {
         String actual = thisPet.getName();
         Assert.assertSame(expected,actual);
     }
+   
 }
